@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Feed Name</title>
+    <link>http://domain/</link>
+    <atom:link href="http://domain/rss.xml" rel="self" type="application/rss+xml" />
+    <description></description>
+    <language>en-au</language>
+    <pubDate>Sat, 13 Feb 2016 20:03:12 +01:00</pubDate>
+    <lastBuildDate>Sat, 13 Feb 2016 20:03:12 +01:00</lastBuildDate>
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://domain/2016/02/13/myfirstpost.html</link>
+      <pubDate>Sat, 13 Feb 2016 00:00:00 +01:00</pubDate>
+      <author>Author</author>
+      <guid>http://domain/2016/02/13/myfirstpost.html</guid>
+      <description>&lt;h2&gt;Hello world...&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-cs&quot;&gt;static void Main() 
+{
+    Console.WriteLine(&amp;quot;Hello World!&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is my first post on the site!&lt;/p&gt;</description>
+    </item>
+    
+  </channel> 
+</rss>
