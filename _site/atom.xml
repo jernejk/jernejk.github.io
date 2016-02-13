@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Feed Name</title>
+  <title>JK dev blog RSS</title>
   <link href="http://domain/"/>
   <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
-  <updated>2016-02-13T23:11:19.7715839+01:00</updated>
-  <id>http://domain/</id>
+  <updated>2016-02-13T23:57:29.2710827+01:00</updated>
+  <id>http://jkdev.me/</id>
   <author>
-    <name>Author</name>
-    <email>Email</email>
+    <name>JK</name>
+    <email>jernej.kavka@outlook.com</email>
   </author>
 
   
   <entry>
     <id>http://domain//2016/02/14/mysecondpost.html</id>
     <link type="text/html" rel="alternate" href="http://domain//2016/02/14/mysecondpost.html"/>
-    <title>Testing how this works</title>
+    <title>Trying out Pretzel</title>
     <updated>2016-02-14T00:00:00+01:00</updated>
     <author>
       <name>Author</name>

@@ -6,76 +6,48 @@
   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Generated with pretzel -->
   
-  <url>
-    <loc>http://domain/2016/02/14/mysecondpost.html</loc>
-    <lastmod>2016-02-14T00:00:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.00</priority>
-  </url>
-  
-  <url>
-    <loc>http://domain/2016/02/13/myfirstpost.html</loc>
-    <lastmod>2016-02-13T00:00:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.00</priority>
-  </url>
-  
-  
-  
-	
-	<url>
-		<loc>http://domain/about.html</loc>
+    <url>
+        <loc>http://domain/2016/02/14/mysecondpost.html</loc>
+        <lastmod>2016-02-14T00:00:00+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+
+    <url>
+        <loc>http://domain/2016/02/13/myfirstpost.html</loc>
+        <lastmod>2016-02-13T00:00:00+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+
+    <url>
+		<loc>http://jkdev.me/about.html</loc>
 		<changefreq>daily</changefreq>
 		<priority>1.00</priority>
 	</url>
-	
-  
-	
-	<url>
-		<loc>http://domain/atom.xml</loc>
+
+    <url>
+		<loc>http://jkdev.me/atom.xml</loc>
 		<changefreq>daily</changefreq>
 		<priority>1.00</priority>
 	</url>
-	
-  
-	
-	<url>
-		<loc>http://domain/index.html</loc>
+
+    <url>
+		<loc>http://jkdev.me/index.html</loc>
 		<changefreq>daily</changefreq>
 		<priority>1.00</priority>
 	</url>
-	
-  
-	
-  
-	
-  
-	
-	<url>
-		<loc>http://domain/rss.xml</loc>
+
+    <url>
+		<loc>http://jkdev.me/rss.xml</loc>
 		<changefreq>daily</changefreq>
 		<priority>1.00</priority>
 	</url>
-	
-  
-	
-  
-	
-	<url>
-		<loc>http://domain/sitemap.xml</loc>
+
+    <url>
+		<loc>http://jkdev.me/sitemap.xml</loc>
 		<changefreq>daily</changefreq>
 		<priority>1.00</priority>
 	</url>
-	
-  
-	
-  
-	
-  
-	
-  
-	
-  
-	
-  
+
 </urlset>

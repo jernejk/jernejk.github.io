@@ -1,8 +1,13 @@
 --- 
 layout: post
-title: "Testing how this works"
+title: "Trying out Pretzel"
 author: "JK"
 comments: true
+#categories:
+#- Testing
+#tags:
+#- tag
+#- another tag
 ---
 
 ## Trying out Pretzel

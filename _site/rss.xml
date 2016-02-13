@@ -6,11 +6,11 @@
     <atom:link href="http://domain/rss.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-au</language>
-    <pubDate>Sat, 13 Feb 2016 23:11:19 +01:00</pubDate>
-    <lastBuildDate>Sat, 13 Feb 2016 23:11:19 +01:00</lastBuildDate>
+    <pubDate>Sat, 13 Feb 2016 23:57:29 +01:00</pubDate>
+    <lastBuildDate>Sat, 13 Feb 2016 23:57:29 +01:00</lastBuildDate>
     
     <item>
-      <title>Testing how this works</title>
+      <title>Trying out Pretzel</title>
       <link>http://domain/2016/02/14/mysecondpost.html</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +01:00</pubDate>
       <author>Author</author>
