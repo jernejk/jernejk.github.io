@@ -6,8 +6,21 @@
     <atom:link href="http://domain/rss.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-au</language>
-    <pubDate>Sat, 13 Feb 2016 20:03:12 +01:00</pubDate>
-    <lastBuildDate>Sat, 13 Feb 2016 20:03:12 +01:00</lastBuildDate>
+    <pubDate>Sat, 13 Feb 2016 23:11:19 +01:00</pubDate>
+    <lastBuildDate>Sat, 13 Feb 2016 23:11:19 +01:00</lastBuildDate>
+    
+    <item>
+      <title>Testing how this works</title>
+      <link>http://domain/2016/02/14/mysecondpost.html</link>
+      <pubDate>Sun, 14 Feb 2016 00:00:00 +01:00</pubDate>
+      <author>Author</author>
+      <guid>http://domain/2016/02/14/mysecondpost.html</guid>
+      <description>&lt;h2&gt;Trying out Pretzel&lt;/h2&gt;
+&lt;p&gt;Blog is currently under construction.&lt;br/&gt;
+Please check my &lt;a href=&quot;http://jernejkavka.wordpress.com/&quot; title=&quot;My Slovenian blog&quot;&gt;Slovenian blog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My image just for funzies: &lt;br/&gt;
+&lt;img src=&quot;https://1.gravatar.com/avatar/a0b9bf721378bbc997751800c3df2d73?s=128&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;My image&quot; /&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>My First Post</title>

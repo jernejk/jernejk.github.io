@@ -7,6 +7,13 @@
   <!-- Generated with pretzel -->
   
   <url>
+    <loc>http://domain/2016/02/14/mysecondpost.html</loc>
+    <lastmod>2016-02-14T00:00:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+  
+  <url>
     <loc>http://domain/2016/02/13/myfirstpost.html</loc>
     <lastmod>2016-02-13T00:00:00+01:00</lastmod>
     <changefreq>daily</changefreq>

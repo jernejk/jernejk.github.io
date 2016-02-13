@@ -3,13 +3,29 @@
   <title>Feed Name</title>
   <link href="http://domain/"/>
   <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
-  <updated>2016-02-13T20:03:12.6347522+01:00</updated>
+  <updated>2016-02-13T23:11:19.7715839+01:00</updated>
   <id>http://domain/</id>
   <author>
     <name>Author</name>
     <email>Email</email>
   </author>
 
+  
+  <entry>
+    <id>http://domain//2016/02/14/mysecondpost.html</id>
+    <link type="text/html" rel="alternate" href="http://domain//2016/02/14/mysecondpost.html"/>
+    <title>Testing how this works</title>
+    <updated>2016-02-14T00:00:00+01:00</updated>
+    <author>
+      <name>Author</name>
+      <uri>http://domain/</uri>
+    </author>
+    <content type="html">&lt;h2&gt;Trying out Pretzel&lt;/h2&gt;
+&lt;p&gt;Blog is currently under construction.&lt;br/&gt;
+Please check my &lt;a href=&quot;http://jernejkavka.wordpress.com/&quot; title=&quot;My Slovenian blog&quot;&gt;Slovenian blog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My image just for funzies: &lt;br/&gt;
+&lt;img src=&quot;https://1.gravatar.com/avatar/a0b9bf721378bbc997751800c3df2d73?s=128&amp;amp;d=identicon&amp;amp;r=G&quot; alt=&quot;My image&quot; /&gt;&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <id>http://domain//2016/02/13/myfirstpost.html</id>
