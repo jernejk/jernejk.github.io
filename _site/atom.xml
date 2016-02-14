@@ -3,13 +3,202 @@
   <title>JK dev blog RSS</title>
   <link href="http://domain/"/>
   <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
-  <updated>2016-02-13T23:57:29.2710827+01:00</updated>
+  <updated>2016-02-14T18:07:25.7809542+01:00</updated>
   <id>http://jkdev.me/</id>
   <author>
     <name>JK</name>
     <email>jernej.kavka@outlook.com</email>
   </author>
 
+  
+  <entry>
+    <id>http://domain//2016/02/15/c-sharp-5-vs-6.html</id>
+    <link type="text/html" rel="alternate" href="http://domain//2016/02/15/c-sharp-5-vs-6.html"/>
+    <title>Comparison between C# 5 and 6 features</title>
+    <updated>2016-02-15T00:00:00+01:00</updated>
+    <author>
+      <name>Author</name>
+      <uri>http://domain/</uri>
+    </author>
+    <content type="html">&lt;p&gt;Comparison between C# 5 and C# 6 features in a console app (applies to all platforms)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jernejk/NewFeaturesComparisonCS6&quot;&gt;Find project on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ci.appveyor.com/project/jernejk/newfeaturescomparisoncs6/branch/master&quot;&gt;&lt;img src=&quot;https://ci.appveyor.com/api/projects/status/42viuuadm18nlfyn/branch/master?svg=true&quot; alt=&quot;Build status&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Presented features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Auto-property initializes&lt;/li&gt;
+&lt;li&gt;nameof&lt;/li&gt;
+&lt;li&gt;Method lamdba expressions&lt;/li&gt;
+&lt;li&gt;Using static&lt;/li&gt;
+&lt;li&gt;Await in catch and finally statements&lt;/li&gt;
+&lt;li&gt;Null conditional operator (or sometimes called Elvis operator)&lt;/li&gt;
+&lt;li&gt;Exception filtering&lt;/li&gt;
+&lt;li&gt;Dictionary initializer&lt;/li&gt;
+&lt;li&gt;String interpolation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Auto-property initializer&lt;/h3&gt;
+&lt;p&gt;Instead of using a private field which is exposed in a property without a setter you can now initialize auto properties.&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;private bool isReadyOnly = true;
+public bool IsReadOnly { get { return isReadyOnly; } }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;public bool IsReadOnly { get; } = true;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;nameof&lt;/h3&gt;
+&lt;p&gt;Hard coding names of types, properties, fields, etc. as string is a bad idea for refactoring.
+This can be solved with LINQ, reflections and other hacks, however they may be expensive and are now unnecessary.&lt;/p&gt;
+&lt;p&gt;With nameof we get compile time string values of variables, types, fields, methods, etc.&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;RaisePropertyChange(&amp;quot;PropertyName&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;RaisePropertyChange(nameof(PropertyName));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Additional samples for nameof:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;nameof(this.FieldName) // &amp;quot;FieldName&amp;quot;
+nameof(Model.Employee[0].FullName) // &amp;quot;FullName&amp;quot;
+
+var abc;
+nameof(abc) // abc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Method lamdba expressions&lt;/h3&gt;
+&lt;p&gt;One line code in methods can be replaced with lambda expressions.&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;public string GetString()
+{
+	return &amp;quot;Hello world&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;public string GetString() =&amp;gt; { &amp;quot;Hello world&amp;quot; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Using static&lt;/h3&gt;
+&lt;p&gt;This allows you to use static methods of a class without writing their class.
+Useful for classes like System.Math and System.Console.&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;double value = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2)) * Math.Sin(radius);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;using static System.Math;
+
+// ...
+double value = Sqrt(Pow(a, 2) + Pow(b, 2)) * Sin(radius);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Await in catch and finally statements&lt;/h3&gt;
+&lt;p&gt;In C# 5 we could not await results in catch and finally statements. A correct try/catch/finally can be a great pain to implement if all three statements requires await.
+This image shows how to handle such scenarios and simpler has become in C# 6.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/jernejk/NewFeaturesComparisonCS6/master/try_catch_finally_simplification.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Null conditional operator - ?. (or sometimes called Elvis operator)&lt;/h3&gt;
+&lt;p&gt;Null-conditional operators ?. address many of the situations where code tends to drown in null-checking. They let you access members and elements only when the receiver is not-null, providing a null result otherwise&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;// Basic null checking before getting values
+string tag;
+if (frameworkElement != null)
+{
+    tag = frameworkElement.Tag as string;
+}
+
+// Raising events null and thread safe
+var handler = EventHandler;
+if (EventHandler != null)
+{
+	EventHandler();
+}
+
+// String length or -1 if null
+int length = -1;
+if (value != null)
+{
+	length = value.Length;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;// Basic null checking before getting values
+string tag = frameworkElement?.Tag as string;
+
+// Raising events null and thread safe
+EventHandler?.Invoke();
+
+// String length or -1 if null.
+// If value is null, value?.Length will return null. Operator ?? will use -1 if value?.Length expression is null.
+int length = value?.Length ?? -1;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Exception filtering&lt;/h3&gt;
+&lt;p&gt;Exception filtering allows you to check exception before handling it in catch statement.
+It can be used for logging, WebException handling based on HTTP code, etc.
+The main difference between C# 5 and 6 is when no catch statements should be handled for certain scenarios.
+In C# 5 we had to rethrow exception but in C# 6 we can simply avoid handling catch statement.
+Avoiding handling exception preserves the scope of the origin of the exception if exception is globally not handled.&lt;/p&gt;
+&lt;p&gt;Losing scope in C# 5 due rethrow:
+&lt;img src=&quot;https://raw.githubusercontent.com/jernejk/NewFeaturesComparisonCS6/master/exception_filtering_old_a.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/jernejk/NewFeaturesComparisonCS6/master/exception_filtering_old_b.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Preserving scope in C# 6:
+&lt;img src=&quot;https://raw.githubusercontent.com/jernejk/NewFeaturesComparisonCS6/master/exception_filtering_new.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Additional samples with WebException:&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;try
+{
+	// Web stuff
+}
+catch (WebException exception)
+{
+	if (((HttpWebResponse)e.Response).StatusCode == 404)
+	{
+		// Handle exception
+	}
+	else
+	{
+		throw;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;try
+{
+	// Web stuff
+}
+catch (WebException exception) when (((HttpWebResponse)e.Response).StatusCode == 404)
+{
+	// Handle exception
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Dictionary initializer&lt;/h3&gt;
+&lt;p&gt;Simplifies Dictionary initialization.&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;Dictionary&amp;lt;string, string&amp;gt; settings = new Dictionary&amp;lt;string, string&amp;gt;();
+settings.Add(&amp;quot;EnableStuff&amp;quot;, &amp;quot;True&amp;quot;);
+settings.Add(&amp;quot;OffsetStuff&amp;quot;, &amp;quot;1234&amp;quot;);
+settings.Add(&amp;quot;WidthStuff&amp;quot;, &amp;quot;12345&amp;quot;);
+settings.Add(&amp;quot;HeightStuff&amp;quot;, &amp;quot;1234&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;Dictionary&amp;lt;string, string&amp;gt; settings = new Dictionary&amp;lt;string, string&amp;gt;
+{
+	[&amp;quot;EnableStuff&amp;quot;] = &amp;quot;True&amp;quot;,
+	[&amp;quot;OffsetStuff&amp;quot;] = &amp;quot;1234&amp;quot;,
+	[&amp;quot;WidthStuff&amp;quot;] = &amp;quot;12345&amp;quot;,
+	[&amp;quot;HeightStuff&amp;quot;] = &amp;quot;1234&amp;quot;,
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;String interpolation&lt;/h3&gt;
+&lt;p&gt;Simplifies and shortens String.Format.&lt;/p&gt;
+&lt;h5&gt;C# 5&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;string key, value;
+
+// ...
+return string.Format(&amp;quot;{0} =&amp;gt; `{1}` with length {2}&amp;quot;,
+    key,
+    value ?? &amp;quot;key not found&amp;quot;,
+    value?.Length ?? -1);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5&gt;C# 6&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&quot;language-csharp&quot;&gt;string key, value;
+
+// ...
+return $&amp;quot;{key} =&amp;gt; `{value ?? &amp;quot;key not found&amp;quot;}` with length {value?.Length ?? -1}&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;</content>
+  </entry>
   
   <entry>
     <id>http://domain//2016/02/14/mysecondpost.html</id>

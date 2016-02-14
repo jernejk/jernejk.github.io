@@ -6,7 +6,7 @@
 		<link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Blog Feed" />
 		<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Blog Feed" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<title>JK dev blog</title>
+		<title>Comparison between C# 5 and 6 features</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.4/styles/default.min.css">
 		<link rel="shortcut icon" href="/img/favicon.ico" />
@@ -25,18 +25,13 @@
 				</div>
 			</div>
 			<div id="content">
-				<ul class="posts">
-    
-		<li>
-			<div class="idea">
-				
-					<h1><a href="/2016/02/15/c-sharp-5-vs-6.html">Comparison between C# 5 and 6 features</a></h1>
-					<div class="postdate">15 February, 2016
-						<ul>
-						
-						</ul>
-					</div>
-					<p>Comparison between C# 5 and C# 6 features in a console app (applies to all platforms)</p>
+				<div class="entry-container">
+	<div class='entry'>
+		<h1> Comparison between C# 5 and 6 features </h1>
+		<span class="postdate">15 February, 2016
+			
+		</span>
+		<p>Comparison between C# 5 and C# 6 features in a console app (applies to all platforms)</p>
 <p><a href="https://github.com/jernejk/NewFeaturesComparisonCS6">Find project on GitHub</a></p>
 <p><a href="https://ci.appveyor.com/project/jernejk/newfeaturescomparisoncs6/branch/master"><img src="https://ci.appveyor.com/api/projects/status/42viuuadm18nlfyn/branch/master?svg=true" alt="Build status" /></a></p>
 <p>Presented features:</p>
@@ -214,73 +209,30 @@ return string.Format(&quot;{0} =&gt; `{1}` with length {2}&quot;,
 // ...
 return $&quot;{key} =&gt; `{value ?? &quot;key not found&quot;}` with length {value?.Length ?? -1}&quot;;
 </code></pre>
-					<br />
-					<a href="/2016/02/15/c-sharp-5-vs-6.html#disqus_thread">Comments</a>
-				
-			</div>
-		</li>
-    
-		<li>
-			<div class="idea">
-				
-					<h2><a class="postlink" href="/2016/02/14/mysecondpost.html">Trying out Pretzel</a></h2>
-					<div class="postdate">14 February, 2016
-						<ul>
-						
-						</ul>
-					</div>
-					<h2>Trying out Pretzel</h2>
-<p>Blog is currently under construction.<br/>
-Please check my <a href="http://jernejkavka.wordpress.com/" title="My Slovenian blog">Slovenian blog</a>.</p>
-<p>My image just for funzies: <br/>
-<img src="https://1.gravatar.com/avatar/a0b9bf721378bbc997751800c3df2d73?s=128&amp;d=identicon&amp;r=G" alt="My image" /></p>
-					<a href="/2016/02/14/mysecondpost.html#disqus_thread">Comments</a>
-				
-			</div>
-		</li>
-    
-		<li>
-			<div class="idea">
-				
-					<h2><a class="postlink" href="/2016/02/13/myfirstpost.html">My First Post</a></h2>
-					<div class="postdate">13 February, 2016
-						<ul>
-						
-						</ul>
-					</div>
-					<h2>Hello world...</h2>
-<pre><code class="language-cs">static void Main() 
-{
-    Console.WriteLine(&quot;Hello World!&quot;);
-}
-</code></pre>
-<p>This is my first post on the site!</p>
-					<a href="/2016/02/13/myfirstpost.html#disqus_thread">Comments</a>
-				
-			</div>
-		</li>
-    
-</ul>
+	</div>
+</div>
+<div id="page-navigation"> 
+	<div class="left">  <a href="/2016/02/14/mysecondpost.html" title="Previous Post: Trying out Pretzel">&larr; Trying out Pretzel</a>  </div> 
+	<div class="right">  </div> 
+	<div class="clear">&nbsp;</div>
+</div> 
 
-<h3>OLDER</h3>
-<ul class="postArchive">
 
-</ul>
 
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-//<![CDATA[
-(function() {
-    var links = document.getElementsByTagName('a');
-    var query = '?';
-    for(var i = 0; i < links.length; i++) {
-    if(links[i].href.indexOf('#disqus_thread') >= 0) {
-        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-    }
-    }
-    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/DISQUS_NAME/get_num_replies.js' + query + '"></' + 'script>');
-})();
-//]]>
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'NAME'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
 			</div>
 		</div>
 		<script src="//cdn.jsdelivr.net/highlight.js/8.4/highlight.min.js"></script>
